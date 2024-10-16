@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghavapurapu Chiranjeevi Srinivas | Data Scientist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="icon" href="./assets/square_logo.png" type="image/x-icon">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("YOUR_EMAILJS_USER_ID");
+    })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="header">
+                <div class="logo">
+                    <!-- <img src="./assets/lza_logo.png" alt="Raghavapurapu Chiranjeevi Srinivas"> -->
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#other-platforms">Other Platforms</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="header">
+                <!-- <div class="logo">
+                    <img src="./assets/lza_logo.png" alt="Raghavapurapu Chiranjeevi Srinivas">
+                </div> -->
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu-links">
+                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                        <li><a href="#other-platforms" onclick="toggleMenu()">Other Platforms</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="profile">
+            <div class="section_pic_container">
+                <img src="./assets/profile2.png" alt="Raghavapurapu Chiranjeevi Srinivas Profile Picture" />
+            </div>
+            <div class="section_text">
+                <p class="section_text_p1">Hello, I'm</p>
+                <h1 class="title_1">Raghavapurapu Chiranjeevi Srinivas</h1>
+                <p class="section_text_p2">Data Scientist and Front-End Developer</p>
+                <div class="btn_container">
+                    <button class="btn_color" onclick="location.href='./#contact'">
+                        Contact Info
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <p class="section_text_p1">Get To Know More</p>
+            <h1 class="title_2">About Me</h1>
+            <div class="text_container">
+                <p>I’m currently pursuing a Bachelor of Technology in Data Science and Artificial Intelligence at IIT Bhilai. My journey is driven by a deep passion for leveraging data to solve complex challenges and uncover valuable insights. With a background in machine learning, AI, and data analysis, I have gained practical experience through various projects and internships, focusing on innovative solutions and impactful results. Outside of academics, I enjoy photography and have been actively involved in organizing events, which has helped me develop strong leadership and organizational skills. I am committed to continuous learning and excellence in the field of data science, always eager to explore new opportunities and contribute to meaningful advancements.</p>
+            </div>
+        </section>
+        <section id="experience">
+            <p class="section_text_p1">Here Are My</p>
+            <h1 class="title_2">Experience</h1>
+            <div class="article_container">
+                <article>
+                    <!-- <img src="./assets/codebot.png" class="icon" alt="Experience Image"> -->
+                    <h3>Centre for Artificial Intelligence and Robotics (CAIR) | DRDO</h3>
+                    <p><strong>Machine Learning Intern</strong> (05-2024 – Present)</p>
+                    <p>I conducted a comprehensive evaluation of existing deepfake detection methods, training and testing 30 detectors across 6 distinct datasets to uncover their limitations in achieving robust generalizability. This extensive analysis provided valuable insights into the strengths and weaknesses of current approaches, highlighting areas for improvement.</p>
+                    <p>Building on this knowledge, I spearheaded the development of an innovative deepfake detection workflow. Utilizing Vision Transformers (ViT), I extracted intricate embeddings and meticulously curated them through advanced feature selection and normalization techniques. This sophisticated approach enabled a deeper understanding of the data and improved the accuracy of the detection process.</p>
+                    <p>Through rigorous evaluation and optimization, I increased the detection reliability by 10-15% across diverse datasets, surpassing existing methods. This achievement demonstrates my ability to develop robust and effective solutions in the field of deepfake detection.</p>
+                </article>
+            </div>
+        </section>        
+        <section id="projects">
+            <p class="section_text_p1">Browse Through My</p>
+            <h1 class="title_2">Projects</h1>
+            <div class="details_container">
+                <div class="details_container color_container">
+                    <div class="subdetail_container">
+                        <img src="./assets/codebot.png" class="project_img"/>
+                        <h2 class="projects_subtitle">Codebot: Interactive GitHub Repository Chatbot</h2>
+                        <p>Engineered an interactive chatbot for in-depth GitHub repository discussions using a Large Language Model (LLM) and the CodeLlama-7b-Instruct model. Integrated a vector database for dynamic document retrieval, enhancing user engagement with advanced memory retention and a user-friendly interface for contextually accurate responses.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://huggingface.co/spaces/rcs3/Codebot'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/threat.jpg" class="project_img"/>
+                        <h2 class="projects_subtitle">Threatening Call Alert System</h2>
+                        <p>Engineered the Automatic Threatening Call Alert System, leveraging advanced data preprocessing and a fine-tuned DistilBERT model to achieve an impressive 91.81% accuracy in real-time threat detection. Integrated PyAudio, SpeechRecognition, and PyWhatKit for immediate threat identification and rapid alert generation, significantly enhancing security protocols and enabling swift responses to potential threats.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Threatening-Call-Detection'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/weatherwise.png" class="project_img"/>
+                        <h2 class="projects_subtitle">WeatherWise</h2>
+                        <p> Engineered the WeatherWise application utilizing ReactJS, empowering users to seamlessly access and visualize current weather conditions and forecasts. Implemented a fully responsive design to deliver an exceptional user experience across devices, significantly enhancing usability and navigation</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/WeatherWise'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/kokoro.jpg" class="project_img"/>
+                        <h2 class="projects_subtitle">KokoroBot</h2>
+                        <p>Designed KokoroBot with a user-friendly interface in Streamlit, incorporating custom CSS for seamless chat history and real-time emotion analysis. Utilized OpenCV to capture webcam frames for empathetic responses based on emotions, achieving 82% CNN accuracy in emotion recognition with TensorFlow on the AffectNet dataset. Integrated Google’s Gemini-Pro AI for generating personalized responses, significantly enhancing user engagement and support.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/KokoroBot'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/distil.jpg" class="project_img"/>
+                        <h2 class="projects_subtitle">Knowledge Distillation with TinyBERT for Twitter Sentiment Analysis</h2>
+                        <p>Implemented a robust Sentiment Analysis system for Twitter using knowledge distillation, achieving a 96% reduction in model size and a 60% increase in processing speed. Leveraged BERT as a teacher model to train TinyBERT, maintaining high performance with 73.8% accuracy on validation data.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Knowledge-Distillation-with-TinyBERT-for-Twitter-Sentiment-Analysis '">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/violent.jpeg"class="project_img"/>
+                        <h2 class="projects_subtitle">Real-time Violence Detection System</h2>
+                        <p>Engineered a violence detection system for live video streams utilizing YOLOv8 for object detection and a custom CNN achieving over 90% accuracy. And integrated YOLOv8 model for real-time object detection within video frames, followed by classification using a pre-trained CNN to determine scenes as violent or non-violent.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Violence-Detection-System'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/bank.png" class="project_img"/>
+                        <h2 class="projects_subtitle">Conversational Banking Assistant</h2>
+                        <p>Designed and implemented a user-friendly banking chatbot using Streamlit, enabling account inquiries, money transfers, and interactive conversational features.</p>
+                        <p>Crafted and deployed functionalities for account inquiries and seamless money transfers within the chatbot interface.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/ConvoBank'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/sales.jpg" class="project_img"/>
+                        <h2 class="projects_subtitle">SalesPulse Analytics</h2>
+                        <p>Utilized Power BI and MySQL to perform an extensive sales analysis, including data extraction, modeling, visualization, and the creation of 3 interactive dashboards and reports. And identified critical trends, the top 5 key performance indicators (KPIs), and actionable insights from sales data to inform business decision-making and optimize strategic planning.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Data-Analysis-Project-on-Sales-Insights-'">View Project</button>
+                        </div>
+                    </div>
+                    <div class="subdetail_container">
+                        <img src="./assets/diet.png" class="project_img"/>
+                        <h2 class="projects_subtitle">The Effects of Grazing on Daily Caloric Intake and Dietary Quality</h2>
+                        <p>Applied Python-based data analytics to investigate the impact of frequent grazing behavior (defined as consuming food more than 3 times a day) on caloric intake and dietary quality. By Utilizing the data from the 2007-2018 National Health and Nutrition Examination Survey (NHANES) to analyze dietary intake over a 2 day period to get valuable insights for nutrition research.</p>
+                        <div class="btn_container">
+                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Analyzed-and-critiqued-the-paper-THE-EFFECTS-OF-GRAZING-ON-DAILY-CALORIC-INTAKE-AND-DIETARY-QUALITY-'">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </section>        
+        <section id="other-platforms">
+            <p class="section_text_p1">Explore My</p>
+            <h1 class="title_2">Other Platforms</h1>
+            <div class="details_container">
+                <div class="details_container color_container">
+                    <div class="sub-detail_container">
+                        <a href="https://github.com/chiru-13" class="platform-link">
+                            <img src="./assets/git.jpeg" class="project_img" />
+                            <h2 class="projects_subtitle">Github</h2>
+                            <p>All things code</p>
+                        </a>
+                    </div>
+                    <div class="sub-detail_container">
+                        <a href="https://www.kaggle.com/rchiranjeevisrinivas" class="platform-link">
+                            <img src="./assets/kaggle.png" class="project_img" />
+                            <h2 class="projects_subtitle">Kaggle</h2>
+                            <p>Check out my data vizzes</p>
+                        </a>
+                    </div>
+                    <!-- <div class="sub-detail_container">
+                        <a href="https://medium.com/@raghavapurapuch" class="platform-link">
+                            <img src="./assets/hugg.jpg" class="project_img" />
+                            <h2 class="projects_subtitle">Hugging Face</h2>
+                            <p>Catch my thoughts and insights on data</p>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </section>        
+        <section id="contact">
+            <h1 class="title_2">Contact Me</h1>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button class="submit-button" onclick="sendMail()">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <p>Raghavapurapu Chiranjeevi Srinivas</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Indian Institute of Technology, Bhilai</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:raghavapurapuch@iitbhilai.ac.in">raghavapurapuch@iitbhilai.ac.in</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 8328576109</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_left">
+                <p>Follow me on</p>
+                <div class="social_icons">
+                    <a href="https://www.linkedin.com/in/chiranjeevi-srinivas-raghavapurapu-37265b25b/">
+                        <img src="./assets/linkedin.png" alt="LinkedIn" class="footer-img"/>
+                    </a>
+                    <a href="https://github.com/chiru-13">
+                        <img src="./assets/gl.jpg" alt="GitHub" class="footer-img" />
+                    </a>
+                </div>
+            </div>
+            <div class="footer_right">
+                <p>&copy; 2024 Raghavapurapu Chiranjeevi Srinivas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
