@@ -1,266 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raghavapurapu Chiranjeevi Srinivas | Data Scientist</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <link rel="icon" href="./assets/square_logo.png" type="image/x-icon">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init("YOUR_EMAILJS_USER_ID");
-    })();
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raghavapurapu Chiranjeevi Srinivas</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0d0d0d;
+      --paper: #f5f0e8;
+      --accent: #c94a2d;
+      --accent2: #2d6ac9;
+      --muted: #6b6457;
+      --border: #d9d3c7;
+      --card: #fffcf7;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem 5vw; gap: 4rem; }
+    .hero-eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); margin-bottom: 2.2rem; max-width: 440px; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.75rem 1.8rem; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.2s; display: inline-block; }
+    .btn-primary { background: var(--accent); color: #fff; border: 2px solid var(--accent); }
+    .btn-primary:hover { background: transparent; color: var(--accent); }
+    .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    .hero-card { background: var(--card); border: 1px solid var(--border); padding: 2.5rem; position: relative; }
+    .hero-card::before { content: ''; position: absolute; inset: -6px; border: 1px solid var(--border); z-index: -1; }
+    .hero-status { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+    .hero-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)} }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem; }
+    .stat { border-top: 1px solid var(--border); padding-top: 1rem; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+    section { padding: 6rem 5vw; }
+    section:nth-child(even) { background: var(--card); }
+    .section-label { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); letter-spacing: -0.02em; margin-bottom: 3rem; max-width: 600px; }
+    h2 em { font-style: italic; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap img { width: 100%; display: block; filter: grayscale(20%); border: 1px solid var(--border); }
+    .about-img-wrap::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 100%; height: 100%; border: 1px solid var(--border); z-index: -1; }
+    .about-body p { color: var(--muted); margin-bottom: 1.2rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.8rem; border: 1px solid var(--border); color: var(--muted); border-radius: 2px; }
+    .exp-timeline { max-width: 780px; }
+    .exp-item { display: grid; grid-template-columns: 140px 1fr; gap: 2.5rem; padding: 2.5rem 0; border-top: 1px solid var(--border); }
+    .exp-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-date { font-size: 0.78rem; color: var(--muted); padding-top: 0.3rem; line-height: 1.5; }
+    .exp-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.18rem 0.6rem; margin-top: 0.5rem; border-radius: 2px; }
+    .badge-current { background: #fff0ed; color: var(--accent); border: 1px solid #f5c4bb; }
+    .badge-past { background: #eff3fb; color: var(--accent2); border: 1px solid #c0d2f0; }
+    .exp-company { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 0.2rem; }
+    .exp-role { font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 1rem; }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li { font-size: 0.93rem; color: var(--muted); margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .project-title { font-family: 'DM Serif Display', serif; font-size: 1.25rem; margin-bottom: 0.8rem; line-height: 1.25; }
+    .project-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.4rem; }
+    .tech-pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.2rem 0.6rem; background: var(--paper); border: 1px solid var(--border); border-radius: 2px; color: var(--muted); }
+    .project-links { display: flex; gap: 1rem; }
+    .project-link { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 0.1rem; transition: color 0.2s, border-color 0.2s; }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+    .project-link.demo { color: var(--accent); border-color: var(--accent); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    .skill-group-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-item { font-size: 0.8rem; padding: 0.25rem 0.7rem; background: var(--paper); border: 1px solid var(--border); border-radius: 2px; color: var(--muted); }
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: var(--muted); margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; text-decoration: none; color: var(--ink); padding: 0.8rem 1rem; border: 1px solid var(--border); background: var(--paper); transition: all 0.2s; }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link-icon { font-size: 1rem; width: 20px; text-align: center; }
+    footer { padding: 2rem 5vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      .hero, .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav id="nav">
-            <div class="header">
-                <div class="logo">
-                    <!-- <img src="./assets/lza_logo.png" alt="Raghavapurapu Chiranjeevi Srinivas"> -->
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#other-platforms">Other Platforms</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <nav id="hamburger-nav">
-            <div class="header">
-                <!-- <div class="logo">
-                    <img src="./assets/lza_logo.png" alt="Raghavapurapu Chiranjeevi Srinivas">
-                </div> -->
-                <div class="hamburger-menu">
-                    <div class="hamburger-icon" onclick="toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="menu-links">
-                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                        <li><a href="#other-platforms" onclick="toggleMenu()">Other Platforms</a></li>
-                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="profile">
-            <div class="section_pic_container">
-                <img src="./assets/profile2.png" alt="Raghavapurapu Chiranjeevi Srinivas Profile Picture" />
-            </div>
-            <div class="section_text">
-                <p class="section_text_p1">Hello, I'm</p>
-                <h1 class="title_1">Raghavapurapu Chiranjeevi Srinivas</h1>
-                <p class="section_text_p2">Data Scientist and Front-End Developer</p>
-                <div class="btn_container">
-                    <button class="btn_color" onclick="location.href='./#contact'">
-                        Contact Info
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section id="about">
-            <p class="section_text_p1">Get To Know More</p>
-            <h1 class="title_2">About Me</h1>
-            <div class="text_container">
-                <p>I’m currently pursuing a Bachelor of Technology in Data Science and Artificial Intelligence at IIT Bhilai. My journey is driven by a deep passion for leveraging data to solve complex challenges and uncover valuable insights. With a background in machine learning, AI, and data analysis, I have gained practical experience through various projects and internships, focusing on innovative solutions and impactful results. Outside of academics, I enjoy photography and have been actively involved in organizing events, which has helped me develop strong leadership and organizational skills. I am committed to continuous learning and excellence in the field of data science, always eager to explore new opportunities and contribute to meaningful advancements.</p>
-            </div>
-        </section>
-        <section id="experience">
-            <p class="section_text_p1">Here Are My</p>
-            <h1 class="title_2">Experience</h1>
-            <div class="article_container">
-                <article>
-                    <!-- <img src="./assets/codebot.png" class="icon" alt="Experience Image"> -->
-                    <h3>Centre for Artificial Intelligence and Robotics (CAIR) | DRDO</h3>
-                    <p><strong>Machine Learning Intern</strong> (05-2024 – Present)</p>
-                    <p>I conducted a comprehensive evaluation of existing deepfake detection methods, training and testing 30 detectors across 6 distinct datasets to uncover their limitations in achieving robust generalizability. This extensive analysis provided valuable insights into the strengths and weaknesses of current approaches, highlighting areas for improvement.</p>
-                    <p>Building on this knowledge, I spearheaded the development of an innovative deepfake detection workflow. Utilizing Vision Transformers (ViT), I extracted intricate embeddings and meticulously curated them through advanced feature selection and normalization techniques. This sophisticated approach enabled a deeper understanding of the data and improved the accuracy of the detection process.</p>
-                    <p>Through rigorous evaluation and optimization, I increased the detection reliability by 10-15% across diverse datasets, surpassing existing methods. This achievement demonstrates my ability to develop robust and effective solutions in the field of deepfake detection.</p>
-                </article>
-            </div>
-        </section>        
-        <section id="projects">
-            <p class="section_text_p1">Browse Through My</p>
-            <h1 class="title_2">Projects</h1>
-            <div class="details_container">
-                <div class="details_container color_container">
-                    <div class="subdetail_container">
-                        <img src="./assets/codebot.png" class="project_img"/>
-                        <h2 class="projects_subtitle">Codebot: Interactive GitHub Repository Chatbot</h2>
-                        <p>Engineered an interactive chatbot for in-depth GitHub repository discussions using a Large Language Model (LLM) and the CodeLlama-7b-Instruct model. Integrated a vector database for dynamic document retrieval, enhancing user engagement with advanced memory retention and a user-friendly interface for contextually accurate responses.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://huggingface.co/spaces/rcs3/Codebot'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/threat.jpg" class="project_img"/>
-                        <h2 class="projects_subtitle">Threatening Call Alert System</h2>
-                        <p>Engineered the Automatic Threatening Call Alert System, leveraging advanced data preprocessing and a fine-tuned DistilBERT model to achieve an impressive 91.81% accuracy in real-time threat detection. Integrated PyAudio, SpeechRecognition, and PyWhatKit for immediate threat identification and rapid alert generation, significantly enhancing security protocols and enabling swift responses to potential threats.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Threatening-Call-Detection'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/weatherwise.png" class="project_img"/>
-                        <h2 class="projects_subtitle">WeatherWise</h2>
-                        <p> Engineered the WeatherWise application utilizing ReactJS, empowering users to seamlessly access and visualize current weather conditions and forecasts. Implemented a fully responsive design to deliver an exceptional user experience across devices, significantly enhancing usability and navigation</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/WeatherWise'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/kokoro.jpg" class="project_img"/>
-                        <h2 class="projects_subtitle">KokoroBot</h2>
-                        <p>Designed KokoroBot with a user-friendly interface in Streamlit, incorporating custom CSS for seamless chat history and real-time emotion analysis. Utilized OpenCV to capture webcam frames for empathetic responses based on emotions, achieving 82% CNN accuracy in emotion recognition with TensorFlow on the AffectNet dataset. Integrated Google’s Gemini-Pro AI for generating personalized responses, significantly enhancing user engagement and support.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/KokoroBot'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/distil.jpg" class="project_img"/>
-                        <h2 class="projects_subtitle">Knowledge Distillation with TinyBERT for Twitter Sentiment Analysis</h2>
-                        <p>Implemented a robust Sentiment Analysis system for Twitter using knowledge distillation, achieving a 96% reduction in model size and a 60% increase in processing speed. Leveraged BERT as a teacher model to train TinyBERT, maintaining high performance with 73.8% accuracy on validation data.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Knowledge-Distillation-with-TinyBERT-for-Twitter-Sentiment-Analysis '">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/violent.jpeg"class="project_img"/>
-                        <h2 class="projects_subtitle">Real-time Violence Detection System</h2>
-                        <p>Engineered a violence detection system for live video streams utilizing YOLOv8 for object detection and a custom CNN achieving over 90% accuracy. And integrated YOLOv8 model for real-time object detection within video frames, followed by classification using a pre-trained CNN to determine scenes as violent or non-violent.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Violence-Detection-System'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/bank.png" class="project_img"/>
-                        <h2 class="projects_subtitle">Conversational Banking Assistant</h2>
-                        <p>Designed and implemented a user-friendly banking chatbot using Streamlit, enabling account inquiries, money transfers, and interactive conversational features.</p>
-                        <p>Crafted and deployed functionalities for account inquiries and seamless money transfers within the chatbot interface.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/ConvoBank'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/sales.jpg" class="project_img"/>
-                        <h2 class="projects_subtitle">SalesPulse Analytics</h2>
-                        <p>Utilized Power BI and MySQL to perform an extensive sales analysis, including data extraction, modeling, visualization, and the creation of 3 interactive dashboards and reports. And identified critical trends, the top 5 key performance indicators (KPIs), and actionable insights from sales data to inform business decision-making and optimize strategic planning.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Data-Analysis-Project-on-Sales-Insights-'">View Project</button>
-                        </div>
-                    </div>
-                    <div class="subdetail_container">
-                        <img src="./assets/diet.png" class="project_img"/>
-                        <h2 class="projects_subtitle">The Effects of Grazing on Daily Caloric Intake and Dietary Quality</h2>
-                        <p>Applied Python-based data analytics to investigate the impact of frequent grazing behavior (defined as consuming food more than 3 times a day) on caloric intake and dietary quality. By Utilizing the data from the 2007-2018 National Health and Nutrition Examination Survey (NHANES) to analyze dietary intake over a 2 day period to get valuable insights for nutrition research.</p>
-                        <div class="btn_container">
-                            <button class="btn btn_color project_btn" onclick="location.href='https://github.com/chiru-13/Analyzed-and-critiqued-the-paper-THE-EFFECTS-OF-GRAZING-ON-DAILY-CALORIC-INTAKE-AND-DIETARY-QUALITY-'">View Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>      
-        </section>        
-        <section id="other-platforms">
-            <p class="section_text_p1">Explore My</p>
-            <h1 class="title_2">Other Platforms</h1>
-            <div class="details_container">
-                <div class="details_container color_container">
-                    <div class="sub-detail_container">
-                        <a href="https://github.com/chiru-13" class="platform-link">
-                            <img src="./assets/git.jpeg" class="project_img" />
-                            <h2 class="projects_subtitle">Github</h2>
-                            <p>All things code</p>
-                        </a>
-                    </div>
-                    <div class="sub-detail_container">
-                        <a href="https://www.kaggle.com/rchiranjeevisrinivas" class="platform-link">
-                            <img src="./assets/kaggle.png" class="project_img" />
-                            <h2 class="projects_subtitle">Kaggle</h2>
-                            <p>Check out my data vizzes</p>
-                        </a>
-                    </div>
-                    <!-- <div class="sub-detail_container">
-                        <a href="https://medium.com/@raghavapurapuch" class="platform-link">
-                            <img src="./assets/hugg.jpg" class="project_img" />
-                            <h2 class="projects_subtitle">Hugging Face</h2>
-                            <p>Catch my thoughts and insights on data</p>
-                        </a>
-                    </div> -->
-                </div>
-            </div>
-        </section>        
-        <section id="contact">
-            <h1 class="title_2">Contact Me</h1>
-            <div class="contact-container">
-                <div class="contact-card">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button class="submit-button" onclick="sendMail()">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    <div class="info-item">
-                        <i class="fas fa-user"></i>
-                        <p>Raghavapurapu Chiranjeevi Srinivas</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Indian Institute of Technology, Bhilai</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:raghavapurapuch@iitbhilai.ac.in">raghavapurapuch@iitbhilai.ac.in</a></p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 8328576109</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer_container">
-            <div class="footer_left">
-                <p>Follow me on</p>
-                <div class="social_icons">
-                    <a href="https://www.linkedin.com/in/chiranjeevi-srinivas-raghavapurapu-37265b25b/">
-                        <img src="./assets/linkedin.png" alt="LinkedIn" class="footer-img"/>
-                    </a>
-                    <a href="https://github.com/chiru-13">
-                        <img src="./assets/gl.jpg" alt="GitHub" class="footer-img" />
-                    </a>
-                </div>
-            </div>
-            <div class="footer_right">
-                <p>&copy; 2024 Raghavapurapu Chiranjeevi Srinivas. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="main.js"></script>
+
+<nav>
+  <div class="nav-logo">RCS</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" style="padding-top:2rem;padding-bottom:2rem;">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Software Engineer · AI/ML</div>
+    <h1>Raghavapurapu <em>Chiranjeevi</em> Srinivas</h1>
+    <p class="hero-sub">Building production-grade AI systems and backend services. Currently at Accenture Japan · IIT Bhilai graduate in Data Science & AI.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-status">Open to Opportunities</div>
+    <p style="font-size:0.9rem;color:var(--muted);">Custom Software Engineer at Accenture Japan — securing financial systems with Spring Boot microservices. Passionate about LLMs, RAG pipelines, and shipping AI to production.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">AI Projects Deployed Live</div></div>
+      <div class="stat"><div class="stat-num">8.85</div><div class="stat-label">CGPA — IIT Bhilai</div></div>
+      <div class="stat"><div class="stat-num">2×</div><div class="stat-label">Amazon ML Summer School</div></div>
+      <div class="stat"><div class="stat-num">5★</div><div class="stat-label">HackerRank Coder</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <h2>Engineer at the intersection of <em>AI and Systems</em></h2>
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="assets/profile2.png" alt="Chiranjeevi Srinivas" onerror="this.style.background='#e8e2d8';this.style.height='320px'"/>
+    </div>
+    <div class="about-body">
+      <p>I'm a graduate of IIT Bhilai (B.Tech in Data Science and Artificial Intelligence, 2025) and currently a Custom Software Engineer at Accenture Japan. My work spans both ends of the stack — designing secure backend microservices in Spring Boot and building intelligent AI systems with LLMs, RAG pipelines, and fine-tuned transformers.</p>
+      <p>At Accenture Japan I lead end-to-end implementation of AES encryption flows across financial billing systems used by thousands of end users. Previously, I researched deepfake detection at DRDO's CAIR lab, improving detection reliability by 10–15% using Vision Transformers.</p>
+      <p>I'm drawn to the full arc — from training models and fine-tuning LLMs to shipping them into production systems that real users depend on. I care deeply about performance, reliability, and clean architecture.</p>
+      <div class="tag-list">
+        <span class="tag">LLMs & RAG</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Fine-tuning</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Microservices</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">Photography</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">Where I've Worked</div>
+  <h2>Professional <em>Experience</em></h2>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">Dec 2025 – Present<br/><span class="exp-badge badge-current">Current</span></div>
+      <div>
+        <div class="exp-company">Accenture Japan</div>
+        <div class="exp-role">Custom Software Engineer · Tokyo, Japan</div>
+        <ul class="exp-bullets">
+          <li>Designed and led end-to-end implementation of AES encryption/decryption flows across multiple Spring Boot RESTful services and mainframe-connected batch workflows, securing sensitive financial billing data for thousands of end users.</li>
+          <li>Engineered modular, reusable encryption utilities adopted across 5+ services — improving maintainability, reducing redundant security code, and contributing to architecture decisions on scalability.</li>
+          <li>Owned features end-to-end within an Agile team of 2–5 engineers: technical design, unit/integration testing, peer code reviews, and Jenkins CI/CD pipeline integration to ensure production readiness.</li>
+          <li>Diagnosed and resolved defects across Spring Boot APIs and legacy mainframe batch jobs, actively participating in full SDLC from architecture reviews through live-site incident resolution.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">May 2024 – Jul 2024<br/><span class="exp-badge badge-past">Internship</span></div>
+      <div>
+        <div class="exp-company">CAIR | DRDO</div>
+        <div class="exp-role">Machine Learning Intern · Remote</div>
+        <ul class="exp-bullets">
+          <li>Evaluated existing deepfake detection methods, training and testing 30 detectors across 6 distinct datasets to uncover limitations in generalizability.</li>
+          <li>Developed an innovative deepfake detection workflow using Vision Transformers (ViT) to extract intricate embeddings, curated through advanced feature selection and normalization techniques.</li>
+          <li>Increased detection reliability by 10–15% across diverse datasets through rigorous evaluation and optimization, surpassing existing baseline methods.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">What I've Built</div>
+  <h2>Featured <em>Projects</em></h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">🤖 Agentic AI · Live on HuggingFace</div>
+      <div class="project-title">Codebot — GitHub Repository Chatbot</div>
+      <p class="project-desc">Full agentic solution using Llama 3 that clones any public GitHub repo, indexes it into ChromaDB, and enables natural language Q&A. Replaced a 4GB local model with Groq API via REST integration and implemented memory-aware conversational retrieval (sliding window), cutting cold-start from minutes to seconds. Deployed live on HuggingFace Spaces.</p>
+      <div class="project-tech">
+        <span class="tech-pill">LangChain</span><span class="tech-pill">ChromaDB</span><span class="tech-pill">Llama 3</span><span class="tech-pill">Groq API</span><span class="tech-pill">RAG</span><span class="tech-pill">Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link demo" href="https://huggingface.co/spaces/chiru-13/Codebot" target="_blank">Live Demo ↗</a>
+        <a class="project-link" href="https://github.com/chiru-13/Codebot" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">📚 RAG · LLM Fine-tuning</div>
+      <div class="project-title">arXivBot — Research Assistant</div>
+      <p class="project-desc">RAG pipeline integrating dense vector retrieval with a fine-tuned Falcon-7B for real-time summarization and Q&A over large document corpora. Applied LoRA fine-tuning and 4-bit quantization to reduce memory usage and improve inference efficiency — demonstrating performance optimization and resource-conscious engineering.</p>
+      <div class="project-tech">
+        <span class="tech-pill">LangChain</span><span class="tech-pill">ChromaDB</span><span class="tech-pill">Falcon-7B</span><span class="tech-pill">LoRA</span><span class="tech-pill">QLoRA</span><span class="tech-pill">Python</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/chiru-13/arXivBot" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">🚨 NLP · Real-time Pipeline</div>
+      <div class="project-title">Threatening Call Alert System</div>
+      <p class="project-desc">Real-time pipeline: live audio → speech recognition → fine-tuned DistilBERT (91.81% accuracy) → automated alert dispatch. A fully instrumented, production-ready system with measurable reliability outcomes and telemetry-driven performance validation.</p>
+      <div class="project-tech">
+        <span class="tech-pill">DistilBERT</span><span class="tech-pill">PyAudio</span><span class="tech-pill">SpeechRecognition</span><span class="tech-pill">NLP</span><span class="tech-pill">Python</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/chiru-13/Threatening-Call-Alert-System" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">😊 Multimodal · Emotion AI</div>
+      <div class="project-title">KokoroBot</div>
+      <p class="project-desc">Empathetic chatbot with real-time emotion analysis using OpenCV webcam capture. 82% CNN accuracy on AffectNet dataset with TensorFlow. Integrated Google Gemini-Pro AI for personalized responses based on detected emotions.</p>
+      <div class="project-tech">
+        <span class="tech-pill">TensorFlow</span><span class="tech-pill">OpenCV</span><span class="tech-pill">Gemini-Pro</span><span class="tech-pill">CNN</span><span class="tech-pill">Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/chiru-13/KokoroBot" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">🎥 Computer Vision</div>
+      <div class="project-title">Real-time Violence Detection</div>
+      <p class="project-desc">Violence detection system for live video streams using YOLOv8 for object detection and a custom CNN achieving over 90% accuracy. Two-stage pipeline classifies scenes as violent or non-violent in real time.</p>
+      <div class="project-tech">
+        <span class="tech-pill">YOLOv8</span><span class="tech-pill">CNN</span><span class="tech-pill">PyTorch</span><span class="tech-pill">Computer Vision</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/chiru-13" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">📊 NLP · Knowledge Distillation</div>
+      <div class="project-title">TinyBERT Twitter Sentiment Analysis</div>
+      <p class="project-desc">Sentiment analysis using knowledge distillation — 96% reduction in model size, 60% increase in processing speed. BERT teacher → TinyBERT student, maintaining 73.8% validation accuracy.</p>
+      <div class="project-tech">
+        <span class="tech-pill">BERT</span><span class="tech-pill">TinyBERT</span><span class="tech-pill">Knowledge Distillation</span><span class="tech-pill">Transformers</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://github.com/chiru-13" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">Technical Stack</div>
+  <h2>Skills &amp; <em>Technologies</em></h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-items"><span class="skill-item">Python</span><span class="skill-item">SQL</span><span class="skill-item">C++</span><span class="skill-item">Java</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend & APIs</div>
+      <div class="skill-items"><span class="skill-item">Spring Boot</span><span class="skill-item">RESTful APIs</span><span class="skill-item">Microservices</span><span class="skill-item">FastAPI</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI / Gen AI</div>
+      <div class="skill-items"><span class="skill-item">LangChain</span><span class="skill-item">LangGraph</span><span class="skill-item">RAG</span><span class="skill-item">Fine-tuning</span><span class="skill-item">LoRA / QLoRA</span><span class="skill-item">Prompt Engineering</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">LLMs & NLP</div>
+      <div class="skill-items"><span class="skill-item">Llama 3</span><span class="skill-item">CodeLlama</span><span class="skill-item">Falcon-7B</span><span class="skill-item">DistilBERT</span><span class="skill-item">GPT</span><span class="skill-item">ViT</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">ML Frameworks</div>
+      <div class="skill-items"><span class="skill-item">PyTorch</span><span class="skill-item">TensorFlow</span><span class="skill-item">Scikit-learn</span><span class="skill-item">HuggingFace</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Vector Databases</div>
+      <div class="skill-items"><span class="skill-item">ChromaDB</span><span class="skill-item">pgvector</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">DevOps & Tools</div>
+      <div class="skill-items"><span class="skill-item">Git</span><span class="skill-item">Jenkins CI/CD</span><span class="skill-item">Docker</span><span class="skill-item">Maven</span><span class="skill-item">MySQL</span><span class="skill-item">Linux</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data & Visualization</div>
+      <div class="skill-items"><span class="skill-item">Pandas</span><span class="skill-item">NumPy</span><span class="skill-item">Plotly</span><span class="skill-item">Tableau</span><span class="skill-item">Power BI</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2>Let's <em>Connect</em></h2>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <p>I'm open to full-time roles, research collaborations, and interesting projects in AI/ML and backend engineering. Feel free to reach out — I'd love to chat.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:r.chiranjeevi1309@gmail.com"><span class="contact-link-icon">✉</span> r.chiranjeevi1309@gmail.com</a>
+        <a class="contact-link" href="https://linkedin.com/in/chiranjeevi-srinivas-raghavapurapu-37265b25b/" target="_blank"><span class="contact-link-icon">in</span> LinkedIn</a>
+        <a class="contact-link" href="https://github.com/chiru-13" target="_blank"><span class="contact-link-icon">⌥</span> GitHub — chiru-13</a>
+        <a class="contact-link" href="https://huggingface.co/chiru-13" target="_blank"><span class="contact-link-icon">🤗</span> HuggingFace</a>
+        <a class="contact-link" href="https://www.kaggle.com/rchiranjeevisrinivas" target="_blank"><span class="contact-link-icon">K</span> Kaggle — Notebooks Expert</a>
+        <a class="contact-link" href="tel:+918328576109"><span class="contact-link-icon">☎</span> +91 8328576109</a>
+      </div>
+    </div>
+    <div>
+      <div style="background:var(--paper);border:1px solid var(--border);padding:2rem;">
+        <div class="section-label" style="margin-bottom:1rem;">Achievements</div>
+        <ul class="exp-bullets">
+          <li>Selected as one of 3,000 scholars for Amazon ML Summer School — two consecutive years (2023 & 2024).</li>
+          <li>5-star coder in HackerRank problem-solving.</li>
+          <li>Notebooks Expert on Kaggle.</li>
+          <li>Core Member of The Pixel Snappers, IIT Bhilai — 30+ photographs featured on club Instagram and submitted to Inter IIT Cultural Meet 5.0.</li>
+          <li>Event Coordinator, MERAZ 4.0 — Annual Techno-Cultural Fest of IIT Bhilai.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Raghavapurapu Chiranjeevi Srinivas</span>
+  <span style="color:var(--border)">IIT Bhilai → Accenture Japan</span>
+</footer>
+
 </body>
 </html>
